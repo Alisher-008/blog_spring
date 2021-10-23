@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{partions/main}"
+>
+<div layout:fragment="contentOfSite">
+    <div class="row mt-5" th:each="post : ${posty}">
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary" th:text="#{post.new}"></strong>
+                    <h3 class="mb-0" th:text="${post.title}"></h3>
+                    <div class="mb-1 text-muted" th:text="${post.postDate}"></div>
+                    <p class="card-text mb-auto" th:text="${post.content}"></p>
+                    <p class="card-text mb-auto" th:text="${post.author.username}"></p>
+                    <a th:href="'posts/' + ${post.id}" th:text="#{post.continueReading}"></a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img class="bd-placeholder-img" width="250" height="250"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3bgwuUlTHBodo-jYfDtgeI6NWjvoJ9n4Tqw&usqp=CAU" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

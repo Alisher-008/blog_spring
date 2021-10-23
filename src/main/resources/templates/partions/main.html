@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:insert="~{partions/head}">
+  <title>Index</title>
+</head>
+<body>
+<div th:insert="~{partions/navbar}"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <nav class="nav flex-column">
+        <a class="nav-link active" aria-current="page" href="#">Друзья</a>
+        <a class="nav-link" href="#">Сообщества</a>
+        <a class="nav-link" href="#">Музыка</a>
+        <a class="nav-link" href="#" tabindex="-1" >Pay</a>
+        <a class="nav-link active" aria-current="page" href="#">Подкасты</a>
+        <a class="nav-link" href="#">Видео</a>
+        <a class="nav-link" href="#">Трансляции</a>
+        <a class="nav-link" href="#" tabindex="-1">Игры</a>
+        <a class="nav-link" href="#">Сервисы</a>
+        <a class="nav-link" href="#">Реклама</a>
+      </nav>
+    </div>
+    <div class="col-9">
+      <div layout:fragment="contentOfSite"></div>
+    </div>
+  </div>
+</div>
+</body>
+<div th:insert="~{partions/footer}"></div>
+</html>

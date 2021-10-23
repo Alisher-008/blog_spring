@@ -1,0 +1,23 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{partions/main}"
+>
+<div layout:fragment="contentOfSite">
+    <form th:action="@{/posts/edit}" method="post">
+        <div class="row mt-5">
+            <h1>Update post</h1>
+            <input type="hidden" class="form-control" name="id" th:value="${post_id}">
+            <div class="mb-3">
+                <label for="title" class="form-label">TITLE:</label>
+                <input type="text" class="form-control" name="title" id="title"  th:value="${post.title}" placeholder="Insert title">
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">CONTENT:</label>
+                <textarea class="form-control" name="content" id="content" th:text="${post.content}" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+</html>
